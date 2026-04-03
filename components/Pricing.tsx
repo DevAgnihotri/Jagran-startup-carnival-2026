@@ -1,4 +1,6 @@
 import SectionHeader from "./SectionHeader";
+import CardLanyardSection from "./CardLanyardSection";
+import Link from "next/link";
 
 interface PricingCardProps {
   tier: string;
@@ -19,6 +21,7 @@ interface PricingCardProps {
   tierBorderColor?: string;
   features: { label: string; included: boolean }[];
   accentColor?: string;
+  ctaHref?: string;
 }
 
 function PricingCard({
@@ -40,6 +43,7 @@ function PricingCard({
   tierBorderColor = "#3D3D3D",
   features,
   accentColor = "#555555",
+  ctaHref = "/auth/login?next=/dashboard",
 }: PricingCardProps) {
   return (
     <div
@@ -86,14 +90,15 @@ function PricingCard({
         </div>
       </div>
 
-      <button
+      <Link
+        href={ctaHref}
         className="flex items-center justify-center w-full h-[48px] mt-auto"
         style={{ backgroundColor: btnBg, border: `2px solid ${btnBorderColor}` }}
       >
         <span className="font-ibm-mono text-[12px] tracking-[2px]" style={{ color: btnLabelColor }}>
           {btnLabel}
         </span>
-      </button>
+      </Link>
     </div>
   );
 }
@@ -133,7 +138,16 @@ const SYSTEM_FEATURES = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="flex flex-col w-full bg-[#080808] py-16 px-6 md:py-[100px] md:px-[120px] gap-12 md:gap-[64px]">
+    <section id="pricing" className="relative overflow-visible flex flex-col w-full bg-[#080808] px-6 pt-[280px] pb-16 md:px-[120px] md:pt-[360px] md:pb-[100px] gap-12 md:gap-[64px]">
+      <div className="pointer-events-none absolute inset-x-0 -top-[260px] z-30 flex justify-center md:-top-[320px]">
+        <div className="pointer-events-auto w-full max-w-4xl">
+          <CardLanyardSection
+            containerClassName="relative aspect-square w-full h-[700px] md:h-[820px]"
+            position={[0, 0, 18]}
+          />
+        </div>
+      </div>
+
       <SectionHeader
         label="[09] // REGISTRATION"
         title={"CHOOSE YOUR\nPARTICIPATION TRACK."}
@@ -145,6 +159,7 @@ export default function Pricing() {
           name="EXPO STALL"
           price="RS. 2,500"
           btnLabel="REGISTER EXPO STALL"
+          ctaHref="/auth/login?next=/dashboard"
           features={BUILDER_FEATURES}
           accentColor="#555555"
         />
@@ -164,6 +179,7 @@ export default function Pricing() {
           borderWidth={2}
           btnBg="#FFD600"
           btnBorderColor="transparent"
+          ctaHref="/auth/login?next=/dashboard"
           features={ARCHITECT_FEATURES}
           accentColor="#FFD600"
         />
@@ -174,6 +190,7 @@ export default function Pricing() {
           name="DELEGATE / ALUMNI / PANEL"
           price="FREE"
           btnLabel="REGISTER AS DELEGATE"
+          ctaHref="/auth/login?next=/dashboard"
           btnLabelColor="#FF6B35"
           btnBorderColor="#FF6B35"
           features={SYSTEM_FEATURES}

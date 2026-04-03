@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import UserMenu from "@/components/auth/UserMenu";
 
 const links = [
   { label: "EXPO",      section: "features"  },
@@ -101,12 +102,7 @@ export default function Navbar() {
           >
             EVENT BROCHURE
           </a>
-          <a
-            href="#"
-            className="font-grotesk text-[11px] font-bold text-[#0A0A0A] bg-[#FFD600] tracking-[1.5px] px-[18px] py-[9px] hover:bg-[#F5F5F0] transition-colors"
-          >
-            REGISTER NOW
-          </a>
+          <UserMenu />
         </div>
 
         {/* ── Mobile burger ── */}
@@ -161,7 +157,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-[10px] pt-5">
             <a href="#" className="font-ibm-mono text-[12px] text-[#555] tracking-[1.5px]">EVENT BROCHURE</a>
             <a
-              href="#"
+              href="/auth/login?next=/dashboard"
               className="font-grotesk text-[11px] font-bold text-[#0A0A0A] bg-[#FFD600] tracking-[1.5px] px-[18px] py-[11px] text-center hover:bg-[#F5F5F0] transition-colors"
             >
               REGISTER NOW
