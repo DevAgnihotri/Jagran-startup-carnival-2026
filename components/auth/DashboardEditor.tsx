@@ -49,8 +49,9 @@ export default function DashboardEditor() {
 
   const videoLinksText = useMemo(() => profile.video_links.join(", "), [profile.video_links]);
   const pageUrlPreview = useMemo(() => {
-    if (!profile.slug) return "http://localhost:3000/your-page-name";
-    return `http://localhost:3000/${profile.slug}`;
+    const origin = typeof window !== "undefined" ? window.location.origin : "";
+    if (!profile.slug) return origin ? `${origin}/your-page-name` : "/your-page-name";
+    return origin ? `${origin}/${profile.slug}` : `/${profile.slug}`;
   }, [profile.slug]);
 
   useEffect(() => {
