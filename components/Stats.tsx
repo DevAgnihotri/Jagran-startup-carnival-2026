@@ -1,15 +1,15 @@
 const stats = [
-  { value: "10K+", label: "ACTIVE BUILDERS", border: true },
-  { value: "99.9%", label: "UPTIME SLA", border: true },
-  { value: "4PX", label: "GRID BASE UNIT", border: true },
-  { value: "200+", label: "COMPONENTS", border: false },
+  { value: "2", label: "EVENT DAYS", border: true },
+  { value: "2", label: "FLAGSHIP TRACKS", border: true },
+  { value: "15 APR", label: "REGISTRATION DEADLINE", border: true },
+  { value: "RS. 2,500", label: "STALL FEE", border: false },
 ];
 
 export default function Stats() {
   return (
     <section className="flex flex-col w-full bg-[#FFD600] py-12 px-6 md:py-[80px] md:px-[120px]">
       <span className="font-ibm-mono text-[12px] font-bold text-[#0A0A0A] tracking-[3px]">
-        [03] // BY THE NUMBERS
+        [03] // EVENT SNAPSHOT
       </span>
       <div className="h-8 md:h-[32px]" />
       <div className="grid grid-cols-2 md:flex w-full gap-[2px] md:gap-0">

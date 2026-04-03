@@ -5,49 +5,49 @@ import SectionHeader from "./SectionHeader";
 
 const slides = [
   {
-    tag: "[DASHBOARD]",
+    tag: "[REGISTERED STALL]",
     tagBg: "#FFD600",
     tagColor: "#0A0A0A",
     idx: "01 / 04",
     idxColor: "#444444",
-    title: "FORGE ANALYTICS\nDASHBOARD",
-    by: "BY FORGE LAB // BUILT IN 3 DAYS WITH PIXELCRAFT",
+    title: "GREENBYTE\nINNOVATIONS",
+    by: "AI + SUSTAINABILITY SOLUTIONS // LIVE PRODUCT WALKTHROUGH",
     border: "#2D2D2D",
     bg: "#111111",
     tagBorder: "",
   },
   {
-    tag: "[DESIGN SYS]",
+    tag: "[REGISTERED STALL]",
     tagBg: "#111111",
     tagColor: "#FFD600",
     idx: "02 / 04",
     idxColor: "#FFD600",
-    title: "AXIOM COMPONENT\nLIBRARY",
-    by: "BY AXIOM INC // 200 COMPONENTS IN 1 WEEK",
+    title: "CAMPUSCREATOR\nLABS",
+    by: "CREATOR ECONOMY TOOLS // INFLUENCER GROWTH AND COLLAB SUPPORT",
     border: "#FFD600",
     bg: "#0F0F0F",
     tagBorder: "#FFD600",
   },
   {
-    tag: "[MOBILE APP]",
+    tag: "[REGISTERED STALL]",
     tagBg: "#1A1A1A",
     tagColor: "#FF6B35",
     idx: "03 / 04",
     idxColor: "#444444",
-    title: "NEXUS MOBILE\nSYSTEM",
-    by: "BY NEXUS CO. // CROSS-PLATFORM, 4 DAYS",
+    title: "OPENBUILD\nCOLLECTIVE",
+    by: "OPEN-SOURCE PROJECTS // DEV TOOLS, COMMUNITY DOCS, LIVE DEMOS",
     border: "#2D2D2D",
     bg: "#0A0A0A",
     tagBorder: "#FF6B35",
   },
   {
-    tag: "[LANDING PAGE]",
+    tag: "[REGISTERED STALL]",
     tagBg: "#FFD600",
     tagColor: "#0A0A0A",
     idx: "04 / 04",
     idxColor: "#444444",
-    title: "VORTEX MARKETING\nSITE",
-    by: "BY VORTEX SYS // LAUNCH READY IN 2 DAYS",
+    title: "BRANDNEST\nSTUDIO",
+    by: "EMERGING BRAND TECH // D2C EXPERIENCE STACK + MARKET FEEDBACK",
     border: "#2D2D2D",
     bg: "#111111",
     tagBorder: "",
@@ -67,8 +67,8 @@ export default function Showcase() {
       {/* Header */}
       <div className="flex items-end justify-between px-6 md:px-[120px]">
         <SectionHeader
-          label="[07] // SHOWCASE"
-          title={"BUILT WITH\nPIXELCRAFT."}
+          label="[07] // REGISTERED STALLS"
+          title={"INSIDE THE\nCARNIVAL."}
           titleWidth="w-full max-w-[600px]"
         />
         <div className="flex items-center gap-[8px] shrink-0">
@@ -90,11 +90,11 @@ export default function Showcase() {
       {/* Mobile: single card */}
       <div className="md:hidden px-6">
         <div
-          className="flex flex-col gap-5 p-6 border-2 w-full"
+          className="flex flex-col gap-5 p-6 border-2 w-full transition-all duration-200 hover:brightness-110 hover:saturate-125"
           style={{ backgroundColor: slide.bg, borderColor: slide.border }}
         >
           <div className="flex items-center justify-center h-[160px] bg-[#1A1A1A] border border-[#2D2D2D]">
-            <span className="font-ibm-mono text-[11px] text-[#333333] tracking-[2px]">[SCREENSHOT]</span>
+            <span className="font-ibm-mono text-[11px] text-[#333333] tracking-[2px]">[STALL PREVIEW]</span>
           </div>
           <div className="flex items-center justify-between w-full">
             <div
@@ -125,11 +125,11 @@ export default function Showcase() {
         {slides.map((s, i) => (
           <div
             key={i}
-            className="flex flex-col gap-[24px] p-[40px] h-[412px] w-[560px] shrink-0 border-2"
+            className="flex flex-col gap-[24px] p-[40px] h-[412px] w-[560px] shrink-0 border-2 transition-all duration-200 hover:brightness-110 hover:saturate-125"
             style={{ backgroundColor: s.bg, borderColor: s.border }}
           >
             <div className="flex items-center justify-center h-[200px] bg-[#1A1A1A] border border-[#2D2D2D]">
-              <span className="font-ibm-mono text-[11px] text-[#333333] tracking-[2px]">[SCREENSHOT]</span>
+              <span className="font-ibm-mono text-[11px] text-[#333333] tracking-[2px]">[STALL PREVIEW]</span>
             </div>
             <div className="flex items-center justify-between w-full">
               <div
@@ -159,7 +159,7 @@ export default function Showcase() {
           <button
             key={i}
             onClick={() => setActive(i)}
-            className="h-[4px] transition-all"
+            className="h-[4px] transition-all hover:opacity-80"
             style={{ width: i === active ? 32 : 8, backgroundColor: i === active ? "#FFD600" : "#333333" }}
           />
         ))}
@@ -168,10 +168,10 @@ export default function Showcase() {
       {/* Footer */}
       <div className="flex items-center justify-between px-6 md:px-[120px] pb-16 md:pb-[100px]">
         <span className="font-ibm-mono text-[11px] text-[#444444] tracking-[2px]">
-          SHOWING 0{active + 1} OF 04 PROJECTS
+          SHOWING 0{active + 1} OF 04 REGISTERED STALLS
         </span>
         <span className="font-ibm-mono text-[11px] text-[#FFD600] tracking-[2px] cursor-pointer hover:underline">
-          VIEW ALL &gt;
+          VIEW ALL REGISTERED STALLS &gt;
         </span>
       </div>
     </section>

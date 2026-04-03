@@ -1,6 +1,6 @@
-const productLinks = ["FEATURES", "PRICING", "CHANGELOG", "ROADMAP"];
-const companyLinks = ["ABOUT", "BLOG", "CAREERS"];
-const resourceLinks = ["DOCS", "COMPONENTS", "COMMUNITY"];
+const productLinks = ["EXPO", "TIMETABLE", "HIGHLIGHTS", "REGISTER"];
+const companyLinks = ["ABOUT EVENT", "ORGANIZERS", "CONTACT"];
+const resourceLinks = ["BROCHURE", "FAQ", "HELP DESK"];
 
 export default function Footer() {
   return (
@@ -12,12 +12,12 @@ export default function Footer() {
           <div className="flex items-center gap-[12px]">
             <div className="w-[32px] h-[32px] bg-[#FFD600] shrink-0" />
             <span className="font-grotesk text-[16px] font-bold text-[#FFD600] tracking-[3px]">
-              PIXELCRAFT
+              JAGRAN CARNIVAL
             </span>
           </div>
           <p className="font-ibm-mono text-[11px] text-[#888888] tracking-[1px] leading-[1.6] max-w-[260px]">
-            THE INDUSTRIAL-GRADE DESIGN SYSTEM. BUILT FOR BUILDERS WHO DON&apos;T
-            COMPROMISE.
+            A TWO-DAY ENTREPRENEURSHIP PLATFORM FOR STARTUPS, STUDENTS, ALUMNI,
+            AND INNOVATORS.
           </p>
           <div className="flex gap-[12px]">
             {[{ label: "X" }, { label: "GH" }, { label: "LI" }].map((s) => (
@@ -61,7 +61,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full px-6 md:px-[120px] py-4 md:h-[56px] border-t border-t-[#1D1D1D] gap-3 sm:gap-0">
         <span className="font-ibm-mono text-[11px] text-[#666666] tracking-[1px]">
-          © 2025 PIXELCRAFT SYSTEMS. ALL RIGHTS RESERVED.
+          © 2026 JAGRAN CARNIVAL. ALL RIGHTS RESERVED.
         </span>
         <div className="flex items-center gap-6 md:gap-[32px]">
           <a href="#" className="font-ibm-mono text-[11px] text-[#666666] tracking-[1px] hover:text-[#AAAAAA] transition-colors">
@@ -71,7 +71,7 @@ export default function Footer() {
             TERMS
           </a>
           <span className="font-ibm-mono text-[11px] font-bold text-[#FFD600] tracking-[1px]">
-            V2.0.1
+            EVENT EDITION
           </span>
         </div>
       </div>

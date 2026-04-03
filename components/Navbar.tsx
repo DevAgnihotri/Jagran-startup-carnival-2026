@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { label: "FEATURES",  section: "features"  },
-  { label: "COMPARE",   section: "comparison"},
-  { label: "SHOWCASE",  section: "showcase"  },
+  { label: "EXPO",      section: "features"  },
+  { label: "TIMETABLE", section: "comparison"},
+  { label: "HIGHLIGHTS",section: "showcase"  },
   { label: "FAQ",       section: "faq"       },
-  { label: "PRICING",   section: "pricing"   },
+  { label: "REGISTER",  section: "pricing"   },
 ];
 
 function scrollTo(id: string) {
@@ -62,7 +62,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-[10px] shrink-0 group">
           <span className="w-[10px] h-[10px] bg-[#FFD600] group-hover:scale-110 transition-transform" />
           <span className="font-grotesk text-[13px] font-bold text-[#F5F5F0] tracking-[2.5px]">
-            PIXELCRAFT
+            JAGRAN CARNIVAL
           </span>
         </a>
 
@@ -99,13 +99,13 @@ export default function Navbar() {
             href="#"
             className="font-ibm-mono text-[10px] text-[#555] tracking-[1.5px] hover:text-[#F5F5F0] transition-colors"
           >
-            LOG IN
+            EVENT BROCHURE
           </a>
           <a
             href="#"
             className="font-grotesk text-[11px] font-bold text-[#0A0A0A] bg-[#FFD600] tracking-[1.5px] px-[18px] py-[9px] hover:bg-[#F5F5F0] transition-colors"
           >
-            START FREE
+            REGISTER NOW
           </a>
         </div>
 
@@ -159,12 +159,12 @@ export default function Navbar() {
             );
           })}
           <div className="flex flex-col gap-[10px] pt-5">
-            <a href="#" className="font-ibm-mono text-[12px] text-[#555] tracking-[1.5px]">LOG IN</a>
+            <a href="#" className="font-ibm-mono text-[12px] text-[#555] tracking-[1.5px]">EVENT BROCHURE</a>
             <a
               href="#"
               className="font-grotesk text-[11px] font-bold text-[#0A0A0A] bg-[#FFD600] tracking-[1.5px] px-[18px] py-[11px] text-center hover:bg-[#F5F5F0] transition-colors"
             >
-              START FREE
+              REGISTER NOW
             </a>
           </div>
         </nav>

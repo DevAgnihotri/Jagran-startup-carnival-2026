@@ -1,10 +1,10 @@
-const logos = ["ACME CORP", "AXIOM INC", "FORGE LAB", "NEXUS CO.", "VORTEX SYS"];
+const logos = ["JIEC", "STARTUP CLUBS", "ALUMNI NETWORK", "INDUSTRY MENTORS", "INNOVATION CELL"];
 
 export default function Logos() {
   return (
     <section className="flex flex-col items-center w-full bg-[#0F0F0F] py-[48px] px-6 md:px-[120px] gap-[32px]">
       <span className="font-ibm-mono text-[11px] text-[#444444] tracking-[3px]">
-        TRUSTED BY TEAMS AT
+        POWERED BY THE JAGRAN ENTREPRENEURSHIP ECOSYSTEM
       </span>
       <div className="flex flex-wrap items-center justify-center gap-8 md:gap-[64px] w-full">
         {logos.map((logo) => (

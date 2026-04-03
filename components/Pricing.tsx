@@ -6,6 +6,7 @@ interface PricingCardProps {
   name: string;
   nameColor?: string;
   price: string;
+  priceNote?: string;
   priceColor?: string;
   btnLabel: string;
   btnLabelColor?: string;
@@ -26,6 +27,7 @@ function PricingCard({
   name,
   nameColor = "#F5F5F0",
   price,
+  priceNote = "",
   priceColor = "#F5F5F0",
   btnLabel,
   btnLabelColor = "#888888",
@@ -41,7 +43,7 @@ function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className="flex flex-col gap-8 p-8 md:p-[40px] w-full md:flex-1"
+      className="flex flex-col gap-8 p-8 md:p-[40px] w-full md:flex-1 transition-all duration-200 hover:brightness-110 hover:saturate-125"
       style={{ backgroundColor: bgColor, border: `${borderWidth}px solid ${borderColor}` }}
     >
       <div
@@ -59,7 +61,7 @@ function PricingCard({
         <span className="font-grotesk text-[48px] font-bold tracking-[-2px] leading-none" style={{ color: priceColor }}>
           {price}
         </span>
-        <span className="font-ibm-mono text-[13px] text-[#555555] tracking-[1px] mb-[6px]">/MO</span>
+        {priceNote && <span className="font-ibm-mono text-[13px] text-[#555555] tracking-[1px] mb-[6px]">{priceNote}</span>}
       </div>
 
       {/* Feature list */}
@@ -97,65 +99,65 @@ function PricingCard({
 }
 
 const BUILDER_FEATURES = [
-  { label: "UP TO 3 PROJECTS", included: true },
-  { label: "1 GB STORAGE", included: true },
-  { label: "COMMUNITY SUPPORT", included: true },
-  { label: "BASIC ANALYTICS", included: true },
-  { label: "CUSTOM DOMAINS", included: false },
-  { label: "TEAM COLLABORATION", included: false },
-  { label: "PRIORITY RENDERING", included: false },
-  { label: "API ACCESS", included: false },
+  { label: "DAY 1 STARTUP STALL", included: true },
+  { label: "FULLY EQUIPPED STALL SPACE", included: true },
+  { label: "DEDICATED SPOC SUPPORT", included: true },
+  { label: "COMPLIMENTARY LUNCH FOR 2", included: true },
+  { label: "FELICITATION ELIGIBILITY", included: true },
+  { label: "EXPO FLOOR BRAND VISIBILITY", included: true },
+  { label: "DIRECT AUDIENCE FEEDBACK", included: true },
+  { label: "PRIORITY MENTOR SLOT", included: false },
 ];
 
 const ARCHITECT_FEATURES = [
-  { label: "UNLIMITED PROJECTS", included: true },
-  { label: "50 GB STORAGE", included: true },
-  { label: "PRIORITY SUPPORT", included: true },
-  { label: "ADVANCED ANALYTICS", included: true },
-  { label: "CUSTOM DOMAINS", included: true },
-  { label: "TEAM COLLABORATION", included: true },
-  { label: "PRIORITY RENDERING", included: false },
-  { label: "API ACCESS", included: false },
+  { label: "DAY 2 IDEA PITCH ACCESS", included: true },
+  { label: "JURY EVALUATION", included: true },
+  { label: "PANEL DISCUSSION ENTRY", included: true },
+  { label: "NETWORKING BLOCK ACCESS", included: true },
+  { label: "MENTOR FEEDBACK WINDOW", included: true },
+  { label: "JAGRANPRENEUR CROWN ELIGIBILITY", included: true },
+  { label: "STALL SPACE (DAY 1)", included: false },
+  { label: "PRIVATE DEMO POD", included: false },
 ];
 
 const SYSTEM_FEATURES = [
-  { label: "UNLIMITED PROJECTS", included: true },
-  { label: "UNLIMITED STORAGE", included: true },
-  { label: "DEDICATED SUPPORT", included: true },
-  { label: "FULL ANALYTICS SUITE", included: true },
-  { label: "CUSTOM DOMAINS", included: true },
-  { label: "TEAM COLLABORATION", included: true },
-  { label: "PRIORITY RENDERING", included: true },
-  { label: "API ACCESS", included: true },
+  { label: "AUDIENCE / ALUMNI ACCESS", included: true },
+  { label: "PANELIST REGISTRATION", included: true },
+  { label: "TALKS & STORY SESSIONS", included: true },
+  { label: "COMMUNITY NETWORKING", included: true },
+  { label: "DELEGATE PARTICIPATION", included: true },
+  { label: "INSPIRATION TRACK ENTRY", included: true },
+  { label: "PITCH STAGE SLOT", included: false },
+  { label: "EXPO STALL SPACE", included: false },
 ];
 
 export default function Pricing() {
   return (
     <section id="pricing" className="flex flex-col w-full bg-[#080808] py-16 px-6 md:py-[100px] md:px-[120px] gap-12 md:gap-[64px]">
       <SectionHeader
-        label="[09] // PRICING"
-        title={"TRANSPARENT.\nNO SURPRISES."}
+        label="[09] // REGISTRATION"
+        title={"CHOOSE YOUR\nPARTICIPATION TRACK."}
       />
 
       <div className="flex flex-col md:flex-row w-full gap-[2px]">
         <PricingCard
-          tier="FREE TIER"
-          name="BUILDER"
-          price="$0"
-          btnLabel="GET STARTED FREE"
+          tier="DAY 1"
+          name="EXPO STALL"
+          price="RS. 2,500"
+          btnLabel="REGISTER EXPO STALL"
           features={BUILDER_FEATURES}
           accentColor="#555555"
         />
         <PricingCard
-          tier="MOST POPULAR"
+          tier="DAY 2"
           tierColor="#0A0A0A"
           tierBg="#FFD600"
           tierBorderColor="#FFD600"
-          name="ARCHITECT"
+          name="IDEA PITCH"
           nameColor="#FFD600"
-          price="$49"
+          price="NO FEE"
           priceColor="#FFD600"
-          btnLabel="START BUILDING"
+          btnLabel="REGISTER FOR PITCH"
           btnLabelColor="#0A0A0A"
           bgColor="#111111"
           borderColor="#FFD600"
@@ -166,12 +168,12 @@ export default function Pricing() {
           accentColor="#FFD600"
         />
         <PricingCard
-          tier="ENTERPRISE"
+          tier="OPEN ACCESS"
           tierColor="#FF6B35"
           tierBorderColor="#FF6B35"
-          name="SYSTEM"
-          price="$149"
-          btnLabel="CONTACT SALES"
+          name="DELEGATE / ALUMNI / PANEL"
+          price="FREE"
+          btnLabel="REGISTER AS DELEGATE"
           btnLabelColor="#FF6B35"
           btnBorderColor="#FF6B35"
           features={SYSTEM_FEATURES}
