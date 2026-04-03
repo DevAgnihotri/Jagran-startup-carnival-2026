@@ -122,6 +122,7 @@ export async function PATCH(request: Request) {
   }
 
   const payload = parse.data;
+  const updatePayload: Record<string, unknown> = { ...payload };
 
   if (payload.slug) {
     const normalizedSlug = slugify(payload.slug);
@@ -143,30 +144,31 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: "Username is already taken. Try another one." }, { status: 409 });
     }
 
-    payload.slug = normalizedSlug;
+    updatePayload.slug = normalizedSlug;
   }
 
   if (payload.stall_name) {
-    payload.stall_name = payload.stall_name.trim();
-    if (!payload.stall_name) {
+    const trimmedName = payload.stall_name.trim();
+    if (!trimmedName) {
       return NextResponse.json({ error: "stall_name cannot be empty" }, { status: 400 });
     }
+    updatePayload.stall_name = trimmedName;
   }
 
   if (Object.prototype.hasOwnProperty.call(payload, "background_color")) {
     // normalize empty string to null, and trim valid values
-    if (!payload.background_color) payload.background_color = null;
-    else payload.background_color = (payload.background_color as string).trim();
+    if (!payload.background_color) updatePayload.background_color = null;
+    else updatePayload.background_color = (payload.background_color as string).trim();
   }
 
   if (Object.prototype.hasOwnProperty.call(payload, "background_gradient")) {
-    if (!payload.background_gradient) payload.background_gradient = null;
-    else payload.background_gradient = (payload.background_gradient as string).trim();
+    if (!payload.background_gradient) updatePayload.background_gradient = null;
+    else updatePayload.background_gradient = (payload.background_gradient as string).trim();
   }
 
   const { data, error } = await supabase
     .from("stall_profiles")
-    .update({ ...payload, updated_at: new Date().toISOString() })
+    .update({ ...updatePayload, updated_at: new Date().toISOString() })
     .eq("user_id", user.id)
     .select("*")
     .single();
