@@ -37,7 +37,7 @@ function StepCard({
 
 export default function HowItWorks() {
   return (
-    <section className="flex flex-col w-full bg-[#0D0D0D] py-16 px-6 md:py-[100px] md:px-[120px] gap-12 md:gap-[64px]">
+    <section className="flex flex-col w-full bg-[#0D0D0D] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px] gap-12 lg:gap-[64px]">
       <SectionHeader
         label="[02] // HOW IT WORKS"
         title={"THREE STEPS.\nREADY TO PARTICIPATE."}

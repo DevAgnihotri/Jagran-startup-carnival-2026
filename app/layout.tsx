@@ -15,9 +15,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PixelCraft — Build Without Limits",
+  title: "Jagran Carnival 2026",
   description:
-    "The industrial-grade design system for builders who don't compromise.",
+    "Jagran Startup Event Website",
 };
 
 export default function RootLayout({

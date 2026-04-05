@@ -5,7 +5,6 @@ import UserMenu from "@/components/auth/UserMenu";
 
 const links = [
   { label: "EXPO",      section: "features"  },
-  { label: "TIMETABLE", section: "comparison"},
   { label: "HIGHLIGHTS",section: "showcase"  },
   { label: "FAQ",       section: "faq"       },
   { label: "REGISTER",  section: "pricing"   },
@@ -57,18 +56,23 @@ export default function Navbar() {
         borderBottom:     scrolled ? "1px solid #1E1E1E"   : "1px solid transparent",
       }}
     >
-      <div className="flex items-center justify-between h-[60px] px-6 md:px-[48px] max-w-[1400px] mx-auto">
+      <div className="flex items-center justify-between h-[56px] sm:h-[60px] px-5 sm:px-8 lg:px-12 max-w-[1400px] mx-auto">
 
         {/* ── Logo ── */}
-        <a href="#" className="flex items-center gap-[10px] shrink-0 group">
+        <a
+          href="https://jimkanpur.ac.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-[10px] shrink-0 group"
+        >
           <span className="w-[10px] h-[10px] bg-[#FFD600] group-hover:scale-110 transition-transform" />
-          <span className="font-grotesk text-[13px] font-bold text-[#F5F5F0] tracking-[2.5px]">
+          <span className="font-grotesk text-[11px] sm:text-[13px] font-bold text-[#F5F5F0] tracking-[1.4px] sm:tracking-[2.5px] leading-none">
             JAGRAN CARNIVAL
           </span>
         </a>
 
         {/* ── Desktop nav ── */}
-        <nav className="hidden md:flex items-center gap-[36px]">
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
           {links.map(({ label, section }) => {
             const isActive = active === section;
             return (
@@ -95,9 +99,11 @@ export default function Navbar() {
         </nav>
 
         {/* ── Desktop CTA ── */}
-        <div className="hidden md:flex items-center gap-[14px]">
+        <div className="hidden lg:flex items-center gap-[14px]">
           <a
-            href="#"
+            href="/brochure.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-ibm-mono text-[10px] text-[#555] tracking-[1.5px] hover:text-[#F5F5F0] transition-colors"
           >
             EVENT BROCHURE
@@ -107,7 +113,7 @@ export default function Navbar() {
 
         {/* ── Mobile burger ── */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2 -mr-2"
+          className="lg:hidden flex flex-col gap-[5px] p-2 -mr-2"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -128,9 +134,9 @@ export default function Navbar() {
 
       {/* ── Mobile drawer ── */}
       <div
-        className="md:hidden overflow-hidden transition-all duration-300"
+        className="lg:hidden overflow-hidden transition-all duration-300"
         style={{
-          maxHeight:    menuOpen ? "400px" : "0px",
+          maxHeight:    menuOpen ? "520px" : "0px",
           background:   "rgba(10,10,10,0.97)",
           backdropFilter: "blur(14px)",
           borderBottom: menuOpen ? "1px solid #1E1E1E" : "none",
@@ -155,7 +161,14 @@ export default function Navbar() {
             );
           })}
           <div className="flex flex-col gap-[10px] pt-5">
-            <a href="#" className="font-ibm-mono text-[12px] text-[#555] tracking-[1.5px]">EVENT BROCHURE</a>
+            <a
+              href="/brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-ibm-mono text-[12px] text-[#555] tracking-[1.5px]"
+            >
+              EVENT BROCHURE
+            </a>
             <a
               href="/auth/login?next=/dashboard"
               className="font-grotesk text-[11px] font-bold text-[#0A0A0A] bg-[#FFD600] tracking-[1.5px] px-[18px] py-[11px] text-center hover:bg-[#F5F5F0] transition-colors"

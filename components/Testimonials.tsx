@@ -40,30 +40,30 @@ function TestimonialCard({
 
 export default function Testimonials() {
   return (
-    <section className="flex flex-col w-full bg-[#0A0A0A] py-16 px-6 md:py-[100px] md:px-[120px] gap-12 md:gap-[64px]">
+    <section className="flex flex-col w-full bg-[#0A0A0A] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px] gap-12 lg:gap-[64px]">
       <SectionHeader
-        label="[04] // ORGANIZER VOICES"
-        title={"REAL INTENT.\nREAL OPPORTUNITY."}
+        label="[04] // CONCLAVE VOICES"
+        title={"LEADERSHIP.\nENTREPRENEURSHIP. LEGACY."}
       />
 
       <div className="flex flex-col md:flex-row w-full gap-[2px]">
         <TestimonialCard
-          quote="A PLATFORM WHERE IDEAS MEET OPPORTUNITY, AND STARTUPS MEET DECISION-MAKERS."
+          quote="FROM VISION TO VENTURE IS OUR COMMITMENT TO BUILD ENTREPRENEURIAL THINKING WITH REAL INDUSTRY CONNECTIONS."
           name="JIEC ORGANIZING TEAM"
-          role="JAGRAN CARNIVAL"
+          role="JIM KANPUR"
           accentColor="#FFD600"
         />
         <TestimonialCard
-          quote="FROM CAMPUS INNOVATORS TO ALUMNI FOUNDERS, EVERY VOICE GETS A SERIOUS STAGE."
+          quote="WE ARE BRINGING STARTUPS, ALUMNI, MENTORS, AND LEADERS ON A COMMON PLATFORM FOR IMPACTFUL COLLABORATION."
           name="INDUSTRY MENTOR PANEL"
-          role="STARTUP NETWORK"
+          role="CONCLAVE FACULTY & PARTNERS"
           bgColor="#0D0D0D"
           accentColor="#FF6B35"
         />
         <TestimonialCard
-          quote="PITCH WITH PURPOSE. BUILD WITH IMPACT. THIS IS WHERE EARLY MOMENTUM BEGINS."
-          name="STARTUP OUTREACH DESK"
-          role="JAGRAN CARNIVAL"
+          quote="THE EVENT CONNECTS LEARNING, MENTORSHIP, FUNDING READINESS, AND CERTIFICATION FOR ASPIRING ENTREPRENEURS."
+          name="I-TECH INNOVATION FOUNDATION"
+          role="PROGRAM ASSOCIATE"
           accentColor="#F5F5F0"
         />
       </div>

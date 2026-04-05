@@ -1,0 +1,18 @@
+logoUrl: https://jimkanpur.ac.in/
+brochureUrl: in the public folder
+heroRegisterUrl: instead write it create stall page and proceed to the login button
+eventDetailsUrl: remove it
+finalRegisterUrl: instead write it register form link ( https://forms.gle/9CphHDinuvNBFwTXA)
+contactTeamUrl: change this to expo url. (https://forms.gle/9CphHDinuvNBFwTXA)
+allRegisteredStallsUrl: wait..
+privacyUrl: remove it
+termsUrl: remove it
+socialXUrl: remove it
+socialGithubUrl: remove it
+socialLinkedinUrl: remove it 
+footerProductLinks: change footer to. Jagranpreneur(https://forms.gle/g4uePK1451f2hYkd9), startupexpo( https://forms.gle/9CphHDinuvNBFwTXA), alumi/audi reg(https://forms.gle/X54AEDeAKzQkmhDP8), spnonshir form(https://forms.gle/PbEBNTCBiZxnf2EG9)
+
+remove these two below
+
+footerCompanyLinks: ABOUT EVENT=..., ORGANIZERS=..., CONTACT=...
+footerResourceLinks: BROCHURE=..., FAQ=..., HELP DESK=... 

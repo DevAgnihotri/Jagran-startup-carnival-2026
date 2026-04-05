@@ -2,10 +2,10 @@ import SectionHeader from "./SectionHeader";
 
 export default function Bento() {
   return (
-    <section className="flex flex-col w-full bg-[#0D0D0D] py-16 px-6 md:py-[100px] md:px-[120px] gap-10 md:gap-[48px]">
+    <section className="flex flex-col w-full bg-[#0D0D0D] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px] gap-10 lg:gap-[48px]">
       <SectionHeader
         label="[05] // CARNIVAL VALUE"
-        title={"WHAT YOU GAIN.\nWHEN YOU JOIN."}
+        title={"WHAT YOU GAIN.\nAT THE CONCLAVE."}
         titleWidth="w-full max-w-[800px]"
       />
 
@@ -19,7 +19,7 @@ export default function Bento() {
               {"NETWORKING\nAT SCALE"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#1A1A1A] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              MEET INDUSTRY LEADERS, DELEGATES, ALUMNI, AND PEERS WHO CAN ACCELERATE YOUR JOURNEY.
+              MEET ENTREPRENEURS, ALUMNI, POLICY STAKEHOLDERS, AND INDUSTRY LEADERS ACROSS TWO HIGH-IMPACT DAYS.
             </p>
             <div className="flex items-center justify-center h-[28px] px-[12px] bg-[#0A0A0A] border border-[#0A0A0A] w-fit transition-colors duration-200 group-hover:bg-[#FFF2A8] group-hover:border-[#0A0A0A]">
               <span className="font-ibm-mono text-[10px] font-bold text-[#FFD600] tracking-[2px] transition-colors duration-200 group-hover:text-[#0A0A0A]">[LIVE]</span>
@@ -33,7 +33,7 @@ export default function Bento() {
               {"BRAND\nVISIBILITY"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#666666] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              SHOWCASE YOUR PRODUCT, IDEA, OR COMMUNITY IN FRONT OF A HIGH-INTENT AUDIENCE.
+              GAIN VISIBILITY THROUGH STARTUP EXPO, IDEA PITCHING, PANEL STAGES, AND COMMUNITY SHOWCASE MOMENTS.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function Bento() {
               {"DIRECT\nFEEDBACK"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#666666] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              VALIDATE YOUR IDEA THROUGH LIVE INTERACTIONS WITH VISITORS, MENTORS, AND JURY MEMBERS.
+              GET FEEDBACK ON PRODUCT, POSITIONING, COMPLIANCE, FUNDING READINESS, AND EXECUTION STRATEGY.
             </p>
             <div className="flex items-center justify-center h-[28px] px-[12px] bg-[#1A1A1A] border border-[#FF6B35] w-fit transition-colors duration-200 group-hover:bg-[#FFF2A8] group-hover:border-[#0A0A0A]">
               <span className="font-ibm-mono text-[10px] font-bold text-[#FF6B35] tracking-[2px] transition-colors duration-200 group-hover:text-[#0A0A0A]">[INSIGHT]</span>
@@ -61,7 +61,7 @@ export default function Bento() {
               {"MENTOR\nINTERACTIONS"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#666666] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              HAVE STRUCTURED CONVERSATIONS WITH EXPERIENCED MENTORS ON PRODUCT, MARKET, AND EXECUTION.
+              ACCESS ONE-TO-ONE GUIDANCE FROM MENTORS, INCUBATION SUPPORT LEADS, AND DOMAIN EXPERTS.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function Bento() {
               {"PANEL\nDISCUSSIONS"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#666666] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              LEARN FROM STORIES THAT INSPIRE ACTION AND UNDERSTAND WHAT IT TAKES TO BUILD SUSTAINABLY.
+              ATTEND SESSIONS ON LEADERPRENEURSHIP, NEP IN LEADERSHIP, INVESTMENT PLANNING, AND ENTREPRENEURIAL PHILANTHROPY.
             </p>
             <div className="flex items-center justify-center h-[28px] px-[12px] bg-[#1A1A1A] border border-[#FF6B35] w-fit transition-colors duration-200 group-hover:bg-[#FFF2A8] group-hover:border-[#0A0A0A]">
               <span className="font-ibm-mono text-[10px] font-bold text-[#FF6B35] tracking-[2px] transition-colors duration-200 group-hover:text-[#0A0A0A]">[STAGE]</span>
@@ -86,7 +86,7 @@ export default function Bento() {
               {"RECOGNITION\n& CROWN"}
             </h3>
             <p className="font-ibm-mono text-[12px] text-[#666666] tracking-[1px] leading-[1.6] transition-colors duration-200 group-hover:text-[#0A0A0A]">
-              TOP STARTUPS GET FELICITATED, AND SELECTED WINNERS EARN THE JAGRANPRENEUR CROWN.
+              RECEIVE CERTIFICATION, PRIZE OPPORTUNITIES, FELICITATION, AND LONG-TERM NETWORKING PATHWAYS.
             </p>
           </div>
         </div>

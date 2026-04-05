@@ -47,7 +47,7 @@ function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className="flex flex-col gap-8 p-8 md:p-[40px] w-full md:flex-1 transition-all duration-200 hover:brightness-110 hover:saturate-125"
+      className="flex flex-col gap-8 p-6 sm:p-8 md:p-[40px] w-full xl:flex-1 transition-all duration-200 hover:brightness-110 hover:saturate-125"
       style={{ backgroundColor: bgColor, border: `${borderWidth}px solid ${borderColor}` }}
     >
       <div
@@ -138,11 +138,11 @@ const SYSTEM_FEATURES = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative overflow-visible flex flex-col w-full bg-[#080808] px-6 pt-[280px] pb-16 md:px-[120px] md:pt-[360px] md:pb-[100px] gap-12 md:gap-[64px]">
-      <div className="pointer-events-none absolute inset-x-0 -top-[260px] z-30 flex justify-center md:-top-[320px]">
+    <section id="pricing" className="relative overflow-visible flex flex-col w-full bg-[#080808] px-5 sm:px-8 lg:px-16 xl:px-[120px] pt-16 sm:pt-20 lg:pt-[360px] pb-16 lg:pb-[100px] gap-12 lg:gap-[64px]">
+      <div className="pointer-events-none absolute inset-x-0 -top-[320px] z-30 hidden lg:flex justify-center">
         <div className="pointer-events-auto w-full max-w-4xl">
           <CardLanyardSection
-            containerClassName="relative aspect-square w-full h-[700px] md:h-[820px]"
+            containerClassName="relative aspect-square w-full h-[820px]"
             position={[0, 0, 18]}
           />
         </div>
@@ -153,13 +153,13 @@ export default function Pricing() {
         title={"CHOOSE YOUR\nPARTICIPATION TRACK."}
       />
 
-      <div className="flex flex-col md:flex-row w-full gap-[2px]">
+      <div className="flex flex-col xl:flex-row w-full gap-[2px]">
         <PricingCard
           tier="DAY 1"
           name="EXPO STALL"
           price="RS. 2,500"
-          btnLabel="REGISTER EXPO STALL"
-          ctaHref="/auth/login?next=/dashboard"
+          btnLabel="OPEN EXPO FORM"
+          ctaHref="https://forms.gle/9CphHDinuvNBFwTXA"
           features={BUILDER_FEATURES}
           accentColor="#555555"
         />
@@ -172,14 +172,14 @@ export default function Pricing() {
           nameColor="#FFD600"
           price="NO FEE"
           priceColor="#FFD600"
-          btnLabel="REGISTER FOR PITCH"
+          btnLabel="OPEN JAGRANPRENEURS FORM"
           btnLabelColor="#0A0A0A"
           bgColor="#111111"
           borderColor="#FFD600"
           borderWidth={2}
           btnBg="#FFD600"
           btnBorderColor="transparent"
-          ctaHref="/auth/login?next=/dashboard"
+          ctaHref="https://forms.gle/g4uePK1451f2hYkd9"
           features={ARCHITECT_FEATURES}
           accentColor="#FFD600"
         />
@@ -189,8 +189,8 @@ export default function Pricing() {
           tierBorderColor="#FF6B35"
           name="DELEGATE / ALUMNI / PANEL"
           price="FREE"
-          btnLabel="REGISTER AS DELEGATE"
-          ctaHref="/auth/login?next=/dashboard"
+          btnLabel="OPEN AUDIENCE / ALUMNI FORM"
+          ctaHref="https://forms.gle/X54AEDeAKzQkmhDP8"
           btnLabelColor="#FF6B35"
           btnBorderColor="#FF6B35"
           features={SYSTEM_FEATURES}

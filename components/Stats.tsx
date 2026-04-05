@@ -1,13 +1,13 @@
 const stats = [
-  { value: "2", label: "EVENT DAYS", border: true },
-  { value: "2", label: "FLAGSHIP TRACKS", border: true },
+  { value: "24 APR", label: "STALLS EXPO", border: true },
   { value: "15 APR", label: "REGISTRATION DEADLINE", border: true },
-  { value: "RS. 2,500", label: "STALL FEE", border: false },
+  { value: "JIEC", label: "LEAD ORGANIZER", border: true },
+  { value: "I-TECH", label: "PROGRAM ASSOCIATE", border: false },
 ];
 
 export default function Stats() {
   return (
-    <section className="flex flex-col w-full bg-[#FFD600] py-12 px-6 md:py-[80px] md:px-[120px]">
+    <section className="flex flex-col w-full bg-[#FFD600] py-12 px-5 sm:px-8 md:py-[80px] lg:px-16 xl:px-[120px]">
       <span className="font-ibm-mono text-[12px] font-bold text-[#0A0A0A] tracking-[3px]">
         [03] // EVENT SNAPSHOT
       </span>

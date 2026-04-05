@@ -2,7 +2,7 @@
 
 const CURSORS = [
   {
-    name: "ALEX_K",
+    name: "MUDIT_R",
     color: "#FFD600",
     textColor: "#0A0A0A",
     animName: "cursor-alex",
@@ -18,7 +18,7 @@ const CURSORS = [
     }`,
   },
   {
-    name: "SARA_M",
+    name: "RAGH_B",
     color: "#FF6B35",
     textColor: "#FFFFFF",
     animName: "cursor-sara",
@@ -34,7 +34,7 @@ const CURSORS = [
     }`,
   },
   {
-    name: "JIN_L",
+    name: "SAN_K",
     color: "#4ADE80",
     textColor: "#0A0A0A",
     animName: "cursor-jin",
@@ -50,7 +50,7 @@ const CURSORS = [
     }`,
   },
   {
-    name: "MILA_V",
+    name: "DEV_A",
     color: "#60A5FA",
     textColor: "#0A0A0A",
     animName: "cursor-mila",

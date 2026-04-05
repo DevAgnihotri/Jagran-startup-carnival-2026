@@ -21,7 +21,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-      <section id="faq" className="flex flex-col w-full bg-[#060606] py-16 px-6 md:py-[100px] md:px-[120px]">
+    <section id="faq" className="flex flex-col w-full bg-[#060606] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px]">
       <div className="w-full max-w-[480px]">
         <SectionHeader
           label="[08] // FAQ"
@@ -44,7 +44,7 @@ export default function FAQ() {
                 className="flex items-center justify-between w-full py-5 md:h-[72px] text-left gap-4"
                 onClick={() => setOpenIndex(isOpen ? -1 : i)}
               >
-                <span className="font-grotesk text-[14px] md:text-[16px] font-bold text-[#F5F5F0] tracking-[1px]">
+                <span className="font-grotesk text-[13px] md:text-[16px] font-bold text-[#F5F5F0] tracking-[0.8px] md:tracking-[1px]">
                   {faq.question}
                 </span>
                 <div
@@ -77,9 +77,14 @@ export default function FAQ() {
         <span className="font-ibm-mono text-[13px] text-[#555555] tracking-[1px]">
           STILL HAVE QUESTIONS?
         </span>
-        <span className="font-ibm-mono text-[13px] font-bold text-[#FFD600] tracking-[1px] cursor-pointer hover:underline">
+        <a
+          href="https://forms.gle/9CphHDinuvNBFwTXA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-ibm-mono text-[13px] font-bold text-[#FFD600] tracking-[1px] cursor-pointer hover:underline"
+        >
           CONTACT ORGANIZING TEAM &gt;
-        </span>
+        </a>
       </div>
     </section>
   );

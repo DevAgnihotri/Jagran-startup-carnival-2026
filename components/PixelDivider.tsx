@@ -1,11 +1,13 @@
 export default function PixelDivider() {
   return (
-    <div className="flex w-full">
-      <div className="flex-1 h-[4px] bg-[#FFD600]" />
-      <div className="flex-1 h-[4px] bg-[#0A0A0A]" />
-      <div className="flex-1 h-[4px] bg-[#FFD600]" />
-      <div className="flex-1 h-[4px] bg-[#0A0A0A]" />
-      <div className="flex-1 h-[4px] bg-[#FFD600]" />
+    <div className="w-full border-t border-[#2A2A2A]">
+      <div className="flex w-full h-[10px] sm:h-[12px]">
+        <div className="flex-1 bg-[#FFD600]" />
+        <div className="flex-1 bg-[#1E1E1E]" />
+        <div className="flex-1 bg-[#FFB800]" />
+        <div className="flex-1 bg-[#1E1E1E]" />
+        <div className="flex-1 bg-[#FFD600]" />
+      </div>
     </div>
   );
 }

@@ -5,15 +5,12 @@ import GlitchText from "@/components/GlitchText";
 import CollabCursors from "@/components/CollabCursors";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
-    <section className="relative flex flex-col items-center w-full bg-[#0A0A0A] py-16 px-6 md:py-[100px] md:px-[120px] overflow-hidden">
+    <section className="relative flex flex-col items-center w-full bg-[#0A0A0A] py-14 px-5 sm:px-8 md:py-16 lg:py-[100px] lg:px-16 xl:px-[120px] overflow-hidden">
       {/* Badge */}
-      <div className="flex items-center justify-center gap-[8px] h-[32px] px-[12px] md:px-[16px] bg-[#1A1A1A] border-2 border-[#FFD600]">
+      <div className="flex flex-wrap items-center justify-center gap-2 min-h-[32px] px-3 py-1.5 sm:px-4 bg-[#1A1A1A] border-2 border-[#FFD600] text-center">
         <div className="w-[8px] h-[8px] bg-[#FFD600] shrink-0" />
-        <span className="font-ibm-mono text-[9px] md:text-[11px] font-bold text-[#FFD600] tracking-[1px] md:tracking-[2px] whitespace-nowrap">
+        <span className="font-ibm-mono text-[9px] sm:text-[10px] md:text-[11px] font-bold text-[#FFD600] tracking-[0.8px] sm:tracking-[1.3px] md:tracking-[2px]">
           [LIVE] // JAGRAN CARNIVAL 2026 REGISTRATIONS OPEN
         </span>
       </div>
@@ -26,14 +23,17 @@ export default function Hero() {
         <br />
         <GlitchText text="CONNECT." speed={45} delay={400} />
       </h1>
-      <h1 className="font-grotesk text-[clamp(32px,10vw,96px)] font-bold text-[#FFD600] tracking-[-1px] leading-none text-center w-full max-w-[1100px]">
-        <GlitchText text="JAGRAN CARNIVAL 2026" speed={45} delay={700} />
+      <h1 className="font-grotesk text-[clamp(28px,9vw,96px)] font-bold text-[#FFD600] tracking-[-1px] leading-[0.95] sm:leading-none text-center w-full max-w-[1100px]">
+        <span className="block sm:inline">
+          <GlitchText text="JAGRAN CARNIVAL" speed={45} delay={700} />
+        </span>
+        <span className="block sm:inline sm:ml-2 text-[#FFE86A]">2026</span>
       </h1>
 
       <div className="h-8 md:h-[32px]" />
 
       {/* Subheading */}
-      <p className="font-ibm-mono text-[13px] md:text-[15px] text-[#888888] tracking-[1px] leading-[1.6] text-center w-full max-w-[800px]">
+      <p className="font-ibm-mono text-[12px] md:text-[15px] text-[#888888] tracking-[0.8px] md:tracking-[1px] leading-[1.6] text-center w-full max-w-[800px] px-1">
         2 DAYS. 2 HIGH-IMPACT STARTUP EVENTS.
         <br />
         DAY 1: STARTUP STALL EXPO // DAY 2: JAGRANPRENEURS IDEA PITCH.
@@ -42,37 +42,41 @@ export default function Hero() {
       <div className="h-10 md:h-[48px]" />
 
       {/* CTAs */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-[16px] w-full sm:w-auto">
-        <button className="flex items-center justify-center w-full sm:w-[220px] h-[56px] bg-[#FFD600] hover:bg-[#e6c200] transition-colors">
-          <span className="font-grotesk text-[12px] font-bold text-[#0A0A0A] tracking-[2px]">
-            REGISTER FOR DAY 1 / DAY 2
+      <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-[16px] w-full max-w-md sm:max-w-none sm:w-auto">
+        <a
+          href="/auth/login?next=/dashboard"
+          className="flex items-center justify-center w-full sm:w-[220px] h-[56px] bg-[#FFD600] hover:bg-[#e6c200] transition-colors"
+        >
+          <span className="font-grotesk text-[11px] sm:text-[12px] font-bold text-[#0A0A0A] tracking-[1.2px] sm:tracking-[2px] text-center px-2">
+            CREATE STALL PAGE
           </span>
-        </button>
-        <button className="flex items-center justify-center w-full sm:w-[200px] h-[56px] bg-[#0A0A0A] border-2 border-[#3D3D3D] hover:border-[#888888] transition-colors">
-          <span className="font-ibm-mono text-[12px] text-[#888888] tracking-[2px]">
-            VIEW EVENT DETAILS &gt;
-          </span>
-        </button>
+        </a>
       </div>
 
       <div className="h-6 md:h-[24px]" />
 
-      <p className="font-ibm-mono text-[11px] text-[#555555] tracking-[2px] text-center">
+      <p className="font-ibm-mono text-[10px] sm:text-[11px] font-medium text-[#B8B8B0] tracking-[1px] sm:tracking-[1.6px] text-center leading-5 px-2">
         DEADLINE: 15 APRIL 2026 // EXPO DATE: 24 APRIL 2026 // STALL FEE: RS. 2,500
       </p>
 
-      <div className="h-12 md:h-[64px]" />
+      {/* Collab cursors on the full hero */}
+      <CollabCursors />
+    </section>
+  );
+}
 
-      {/* Animated Design Interface */}
+export function HeroBottomSvgSection() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <section className="w-full bg-[#0A0A0A] px-5 sm:px-8 lg:px-16 xl:px-[120px] pb-16 lg:pb-[100px]">
       <div
-        className="w-full max-w-[1100px] bg-[#0F0F0F] overflow-hidden"
+        className="mx-auto w-full max-w-[1100px] bg-[#0F0F0F] overflow-hidden"
         style={{ border: "2px solid #2D2D2D" }}
       >
         <DesignInterfaceSVG mounted={mounted} />
       </div>
-
-      {/* Collab cursors on the full hero */}
-      <CollabCursors />
     </section>
   );
 }
@@ -81,14 +85,14 @@ export default function Hero() {
 
 const layers = [
   { label: "FRAME / HERO", color: "#FFD600", indent: 0, active: true },
-  { label: "NAVBAR", color: "#888", indent: 12 },
-  { label: "HEADLINE", color: "#4ADE80", indent: 12 },
+  { label: "STALLS", color: "#888", indent: 12 },
+  { label: "DELEGATES", color: "#4ADE80", indent: 12 },
   { label: "EVENT DATES", color: "#888", indent: 12 },
   { label: "REGISTRATION CTA", color: "#FF6B35", indent: 12 },
-  { label: "BTN / REGISTER", color: "#FF6B35", indent: 24 },
-  { label: "BTN / DETAILS", color: "#888", indent: 24 },
+  { label: "PRIZES", color: "#FF6B35", indent: 24 },
+  { label: "OUTREACH", color: "#888", indent: 24 },
   { label: "INFO PANEL", color: "#60A5FA", indent: 12 },
-  { label: "FOOTER", color: "#888", indent: 0 },
+  { label: "MSME", color: "#888", indent: 0 },
 ];
 
 const inspectProps = [
@@ -308,7 +312,7 @@ function DesignInterfaceSVG({ mounted }: { mounted: boolean }) {
         <circle cx="322" cy="289" r="3" fill="#FF5F57" />
         <circle cx="332" cy="289" r="3" fill="#FEBC2E" />
         <circle cx="342" cy="289" r="3" fill="#28C840" />
-        <text x="360" y="293" fontFamily="monospace" fontSize="7" fill="#333" letterSpacing={1}>preview.tsx — PixelCraft</text>
+        <text x="360" y="293" fontFamily="monospace" fontSize="7" fill="#333" letterSpacing={1}>preview.tsx — Website</text>
 
         {/* Code lines */}
         {codeLines.map((cl, i) => (

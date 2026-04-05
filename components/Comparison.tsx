@@ -21,7 +21,7 @@ function cellColor(val: string) {
 
 export default function Comparison() {
   return (
-    <section id="comparison" className="flex flex-col w-full bg-[#050505] py-16 px-6 md:py-[100px] md:px-[120px] gap-12 md:gap-[64px]">
+    <section id="comparison" className="flex flex-col w-full bg-[#050505] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px] gap-12 lg:gap-[64px]">
       <SectionHeader
         label="[06] // TIMETABLE"
         title={"TWO DAYS.\nONE CARNIVAL."}
@@ -29,7 +29,7 @@ export default function Comparison() {
       />
 
       {/* Desktop table */}
-      <div className="hidden md:flex flex-col w-full border border-[#2D2D2D]">
+      <div className="hidden xl:flex flex-col w-full border border-[#2D2D2D]">
         {/* Header */}
         <div className="flex w-full h-[56px] bg-[#111111] border-b-2 border-b-[#FFD600]">
           <div className="flex items-center w-[400px] shrink-0 px-[32px] border-r border-r-[#2D2D2D]">
@@ -63,36 +63,31 @@ export default function Comparison() {
         ))}
       </div>
 
-      {/* Mobile: card-per-feature layout */}
-      <div className="flex flex-col md:hidden w-full gap-[2px]">
-        {/* Header row */}
-        <div className="grid grid-cols-5 bg-[#111111] border border-[#FFD600] border-b-2">
-          <div className="col-span-2 px-3 py-3">
-            <span className="font-grotesk text-[9px] font-bold text-[#888888] tracking-[1px]">TIME</span>
-          </div>
-          <div className="px-2 py-3 bg-[#1A1A1A]">
-            <span className="font-grotesk text-[9px] font-bold text-[#FFD600] tracking-[1px]">D1</span>
-          </div>
-          <div className="px-2 py-3">
-            <span className="font-grotesk text-[9px] font-bold text-[#FF6B35] tracking-[1px]">D2</span>
-          </div>
-          <div className="px-2 py-3">
-            <span className="font-grotesk text-[9px] font-bold text-[#FF6B35] tracking-[1px]">DEL</span>
-          </div>
-        </div>
+      {/* Mobile/tablet cards */}
+      <div className="flex flex-col xl:hidden w-full gap-3">
         {rows.map((row, i) => (
-          <div key={row.feature} className={`grid grid-cols-5 border border-[#1D1D1D] transition-colors duration-200 hover:bg-[#161616] hover:border-[#FFD600] ${i % 2 === 0 ? "bg-[#0A0A0A]" : "bg-[#0D0D0D]"}`}>
-            <div className="col-span-2 flex items-center px-3 py-4">
-              <span className="font-ibm-mono text-[9px] text-[#CCCCCC] tracking-[1px] leading-[1.4]">{row.feature} HRS</span>
+          <div key={row.feature} className={`border border-[#1D1D1D] p-4 transition-colors duration-200 hover:bg-[#161616] hover:border-[#FFD600] ${i % 2 === 0 ? "bg-[#0A0A0A]" : "bg-[#0D0D0D]"}`}>
+            <div className="flex items-center justify-between gap-3 border-b border-[#202020] pb-3">
+              <span className="font-grotesk text-[11px] font-bold tracking-[1.4px] text-[#888888]">TIME SLOT</span>
+              <span className="font-ibm-mono text-[11px] text-[#CCCCCC] tracking-[1px]">{row.feature} HRS</span>
             </div>
-            <div className="flex items-center px-2 py-4 bg-[#0D0D0D]">
-              <span className="font-ibm-mono text-[9px] text-[#FFD600] font-bold">{row.pc}</span>
-            </div>
-            <div className="flex items-center px-2 py-4">
-              <span className={`font-ibm-mono text-[9px] text-[#FF6B35] ${cellColor(row.figma)}`}>{row.figma}</span>
-            </div>
-            <div className="flex items-center px-2 py-4">
-              <span className={`font-ibm-mono text-[9px] text-[#FF6B35] ${cellColor(row.sketch)}`}>{row.sketch}</span>
+            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="flex flex-col gap-1">
+                <span className="font-grotesk text-[10px] font-bold tracking-[1.2px] text-[#FFD600]">DAY 1 EXPO</span>
+                <span className="font-ibm-mono text-[11px] text-[#FFD600] break-words leading-[1.45]">{row.pc}</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-grotesk text-[10px] font-bold tracking-[1.2px] text-[#FF6B35]">DAY 2 PITCH</span>
+                <span className={`font-ibm-mono text-[11px] text-[#FF6B35] break-words leading-[1.45] ${cellColor(row.figma)}`}>{row.figma}</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-grotesk text-[10px] font-bold tracking-[1.2px] text-[#FF6B35]">DELEGATE FLOW</span>
+                <span className={`font-ibm-mono text-[11px] text-[#FF6B35] break-words leading-[1.45] ${cellColor(row.sketch)}`}>{row.sketch}</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-grotesk text-[10px] font-bold tracking-[1.2px] text-[#FF6B35]">STAGE NOTE</span>
+                <span className={`font-ibm-mono text-[11px] text-[#FF6B35] break-words leading-[1.45] ${cellColor(row.framer)}`}>{row.framer}</span>
+              </div>
             </div>
           </div>
         ))}

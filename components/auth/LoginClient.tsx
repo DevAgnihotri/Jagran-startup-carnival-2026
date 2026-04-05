@@ -5,20 +5,39 @@ import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export default function LoginClient({ nextPath }: { nextPath: string }) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleGoogleLogin = async () => {
     setLoading(true);
+    setError("");
     const supabase = createSupabaseBrowserClient();
 
-    const origin = window.location.origin;
+    const configuredOrigin = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+    const origin = configuredOrigin || window.location.origin;
     const safeNext = nextPath.startsWith("/") ? nextPath : "/dashboard";
 
-    await supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
         redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(safeNext)}`,
+        skipBrowserRedirect: true,
       },
     });
+
+    if (error) {
+      setLoading(false);
+      setError(error.message || "Unable to start Google login.");
+      return;
+    }
+
+    if (!data?.url) {
+      setLoading(false);
+      setError("Google login URL was not generated.");
+      return;
+    }
+
+    // Force top-level navigation to avoid iframe/popup origin restrictions.
+    window.location.assign(data.url);
   };
 
   return (
@@ -37,6 +56,12 @@ export default function LoginClient({ nextPath }: { nextPath: string }) {
         >
           {loading ? "CONNECTING..." : "LOGIN WITH GOOGLE"}
         </button>
+
+        {error ? (
+          <p className="mt-4 font-ibm-mono text-[11px] tracking-[1px] text-[#FF7A7A]">
+            {error}
+          </p>
+        ) : null}
       </div>
     </main>
   );
