@@ -36,14 +36,6 @@ export default function FinalCTA() {
             GO TO JIM WEBSITE
           </span>
         </a>
-        <a
-          href={jimWebsiteUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-ibm-mono text-[11px] font-bold text-[#FFD600] tracking-[2px] hover:underline"
-        >
-          JIM LOGO LINK
-        </a>
       </div>
     </section>
   );

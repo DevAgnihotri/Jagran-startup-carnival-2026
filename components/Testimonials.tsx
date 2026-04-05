@@ -43,7 +43,7 @@ export default function Testimonials() {
     <section className="flex flex-col w-full bg-[#0A0A0A] py-16 px-5 sm:px-8 lg:py-[100px] lg:px-16 xl:px-[120px] gap-12 lg:gap-[64px]">
       <SectionHeader
         label="[04] // CONCLAVE VOICES"
-        title={"LEADERSHIP.\nENTREPRENEURSHIP. LEGACY."}
+        title={"LEADERSHIP.\nENTREPRENEURSHIP.\nLEGACY."}
       />
 
       <div className="flex flex-col md:flex-row w-full gap-[2px]">
