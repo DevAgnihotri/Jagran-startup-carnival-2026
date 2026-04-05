@@ -54,9 +54,17 @@ export default function GlitchText({
 
   return (
     // Outer span: holds the full text invisibly to reserve exact dimensions
-    <span ref={ref} className={className} style={{ position: "relative", display: "inline-block" }}>
+    <span ref={ref} className={className} style={{ position: "relative", display: "inline-block", maxWidth: "100%" }}>
       {/* Ghost text — always here, reserves width + height, never visible */}
-      <span aria-hidden="true" style={{ visibility: "hidden", whiteSpace: "pre" }}>
+      <span
+        aria-hidden="true"
+        style={{
+          visibility: "hidden",
+          whiteSpace: "pre-wrap",
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
+        }}
+      >
         {text}
       </span>
 
@@ -67,7 +75,10 @@ export default function GlitchText({
           position: "absolute",
           top: 0,
           left: 0,
-          whiteSpace: "pre",
+          maxWidth: "100%",
+          whiteSpace: "pre-wrap",
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
         }}
       >
         {started ? displayed : ""}
