@@ -5,6 +5,7 @@ import Logos from "@/components/Logos";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Stats from "@/components/Stats";
+import SponsorsShowcase from "@/components/SponsorsShowcase";
 import Testimonials from "@/components/Testimonials";
 import Bento from "@/components/Bento";
 import Showcase from "@/components/Showcase";
@@ -25,6 +26,7 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <Stats />
+      <SponsorsShowcase />
       <Testimonials />
       <Bento />
       <Showcase />
