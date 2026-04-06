@@ -9,6 +9,16 @@ const IMAGE_SRCS = [
 
 const IMAGE_ASPECTS = [1, 1, 1, 1, 1, 1];
 
+// Update these URLs with your sponsor target links.
+const IMAGE_LINKS = [
+  "https://dev3d.vercel.app/",
+  "https://example.com/sponsor-2",
+  "https://example.com/sponsor-3",
+  "https://example.com/sponsor-4",
+  "https://example.com/sponsor-5",
+  "https://example.com/sponsor-6"
+];
+
 const FACE_NAMES = [
   "DEV3D",
   "SPONSOR 2",
@@ -79,6 +89,63 @@ const sections = [...document.querySelectorAll("#scroll_container section")];
 const faceImgIdx = new Array(6).fill(-1);
 let currentStop = -1;
 
+const getCurrentImageIndex = () => {
+  if (currentStop >= 0 && currentStop < N) return currentStop;
+  const s = Math.max(0, Math.min(1, maxScroll > 0 ? scrollY / maxScroll : 0));
+  return stopIndex(s);
+};
+
+const openLinkForImage = (imgIdx) => {
+  if (imgIdx < 0) return;
+  const rawHref = (IMAGE_LINKS[imgIdx] || "").trim();
+  if (!rawHref || rawHref === "#") return;
+
+  const href = /^(https?:|mailto:|tel:)/i.test(rawHref)
+    ? rawHref
+    : `https://${rawHref}`;
+
+  const a = document.createElement("a");
+  a.href = href;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+};
+
+dom.faces.forEach((face, faceIdx) => {
+  face.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const mapped = faceImgIdx[faceIdx];
+    openLinkForImage(mapped >= 0 ? mapped : getCurrentImageIndex());
+  });
+});
+
+window.addEventListener(
+  "click",
+  (e) => {
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    if (target.closest(".face")) return;
+    if (target.closest('a, button, input, textarea, select, [role="button"]')) {
+      return;
+    }
+
+    const rect = dom.cube.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY;
+    const inCube =
+      x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+
+    if (!inCube) return;
+
+    openLinkForImage(getCurrentImageIndex());
+  },
+  true
+);
+
 const imagePromises = new Map();
 
 const isDark = () =>
@@ -126,6 +193,7 @@ async function setFaceImage(faceIdx, imgIdx, force = false) {
     face.appendChild(img);
   }
   img.alt = FACE_NAMES[imgIdx] ?? "";
+  img.style.cursor = "pointer";
   img.onerror = () => {
     const fallback = IMAGE_SRCS[imgIdx];
     if (img.src !== fallback) img.src = fallback;

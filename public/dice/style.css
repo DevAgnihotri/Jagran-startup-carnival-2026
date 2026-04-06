@@ -91,6 +91,7 @@
     transform-style: preserve-3d;
     transform: rotateX(90deg) rotateY(0deg);
     will-change: transform;
+    pointer-events: auto;
   }
 
   .face {
@@ -98,6 +99,7 @@
     inset: 0;
     overflow: hidden;
     backface-visibility: hidden;
+    cursor: pointer;
     background: repeating-linear-gradient(
         0deg,
         rgba(255, 255, 255, 0.02) 0,
@@ -356,11 +358,14 @@
   }
 
   .tag {
+    display: inline-block;
     font-size: 0.6rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--accent);
     margin-block-end: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   :where(h1, h2) {

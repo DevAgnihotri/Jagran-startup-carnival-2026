@@ -15,7 +15,7 @@ export default function SponsorsShowcase() {
 
         <div className="overflow-hidden rounded-2xl border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
           <iframe
-            src="/six-faces-walking-the-cow/index.html"
+            src="/dice/index.html"
             title="Six Faces Walking The Cow showcase"
             className="block h-[100vh] min-h-[700px] w-full border-0 bg-black"
             loading="lazy"
