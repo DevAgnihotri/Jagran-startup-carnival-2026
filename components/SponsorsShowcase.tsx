@@ -7,7 +7,7 @@ export default function SponsorsShowcase() {
             <p className="font-ibm-mono text-[10px] md:text-[12px] font-bold uppercase text-[#FFD600] tracking-[1.5px] md:tracking-[3px]">
               Sponsor Zone
             </p>
-            <h2 className="font-grotesk mt-3 w-full max-w-[700px] whitespace-pre-line text-[36px] font-bold leading-[1.05] tracking-[-1px] text-[#F5F5F0] md:text-[56px]">
+            <h2 className="font-grotesk mt-3 w-full max-w-[700px] uppercase whitespace-pre-line text-[36px] font-bold leading-[1.05] tracking-[-1px] text-[#F5F5F0] md:text-[56px]">
               Meet The Partners Powering Jagran 2026
             </h2>
           </div>

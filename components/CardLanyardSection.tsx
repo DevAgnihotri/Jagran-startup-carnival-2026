@@ -38,7 +38,7 @@ export default function CardLanyardSection({
         userName="your name"
         variant={"dark" as CardVariant}
         city="kanpur"
-        date="23-04-26"
+        date="24-04-26"
         onTextureReady={handleTextureReady}
       />
     </div>

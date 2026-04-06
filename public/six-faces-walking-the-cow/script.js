@@ -1,21 +1,21 @@
 const IMAGE_SRCS = [
-  "https://assets.codepen.io/573855/demo-raw-01.webp",
-  "https://assets.codepen.io/573855/demo-raw-02.webp",
-  "https://assets.codepen.io/573855/demo-raw-03.webp",
-  "https://assets.codepen.io/573855/demo-raw-04.webp",
-  "https://assets.codepen.io/573855/demo-raw-05.webp",
-  "https://assets.codepen.io/573855/demo-raw-06.webp"
+  "/six-faces-walking-the-cow/images/demo-raw-01.webp",
+  "/six-faces-walking-the-cow/images/demo-raw-02.webp",
+  "/six-faces-walking-the-cow/images/demo-raw-02.webp",
+  "/six-faces-walking-the-cow/images/demo-raw-02.webp",
+  "/six-faces-walking-the-cow/images/demo-raw-02.webp",
+  "/six-faces-walking-the-cow/images/demo-raw-02.webp"
 ];
 
 const IMAGE_ASPECTS = [1, 1, 1, 1, 1, 1];
 
 const FACE_NAMES = [
-  "DESCENT",
-  "REBELLION",
-  "MOO WALK",
-  "BAD ART",
-  "NO RULES",
-  "SUPER"
+  "DEV3D",
+  "SPONSOR 2",
+  "SPONSOR 3",
+  "SPONSOR 4",
+  "SPONSOR 5",
+  "SPONSOR 6"
 ];
 
 const SWAP_RADIUS = 3;
@@ -126,6 +126,10 @@ async function setFaceImage(faceIdx, imgIdx, force = false) {
     face.appendChild(img);
   }
   img.alt = FACE_NAMES[imgIdx] ?? "";
+  img.onerror = () => {
+    const fallback = IMAGE_SRCS[imgIdx];
+    if (img.src !== fallback) img.src = fallback;
+  };
   img.src = src;
   img.style.objectFit = (IMAGE_ASPECTS[imgIdx] ?? 1) !== 1 ? "contain" : "";
 }
